@@ -40,11 +40,27 @@
     <style>
     /* ===== RESPONSIVE OVERRIDES ===== */
 
+    /* Prevent horizontal overflow */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+    }
+
     /* Remove fixed min-width on all major containers */
-    #hd, #wrapper, #ft,
-    .visual, .section, .sub_top, .sub_nav, .sub_img {
+    #hd, #wrapper, #ft, #containerWr,
+    .visual, .section, .sub_top, .sub_nav, .sub_img,
+    .hd_wr, .hd, .gnb_wr, .ft, .ft_top, .ft_btm,
+    .section_in, .section01, .section02, .section03, .section04, .section05,
+    .section03_in, .section04_in {
         min-width: 0 !important;
         max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Force all block-level elements to respect viewport */
+    *, *::before, *::after {
+        box-sizing: border-box;
     }
 
     /* All images responsive */
@@ -59,10 +75,14 @@
         height: auto;
     }
 
-    /* Prevent horizontal overflow */
-    html, body {
-        overflow-x: hidden;
-        width: 100%;
+    /* bxSlider wrapper fix - the plugin creates .bx-wrapper with fixed width */
+    .bx-wrapper {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    .bx-viewport {
+        max-width: 100% !important;
+        width: 100% !important;
     }
 
     /* ===== MOBILE HAMBURGER MENU ===== */
